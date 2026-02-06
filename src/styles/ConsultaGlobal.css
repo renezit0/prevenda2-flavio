@@ -1,0 +1,1275 @@
+/* Consulta Global Styles */
+.consulta-global-app {
+  min-height: 100vh;
+  background: #f5f5f5;
+}
+
+/* Header */
+.consulta-header {
+  background: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.consulta-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.consulta-header-nav {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 6px;
+  border-left: 1px solid #e5e7eb;
+}
+
+.consulta-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #6b7280;
+  text-decoration: none;
+  background: #f3f4f6;
+  border: 1px solid #e5e7eb;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.consulta-nav-link:hover {
+  color: #111827;
+  background: #e5e7eb;
+  transform: translateY(-1px);
+}
+
+.consulta-nav-link.active {
+  color: #065f46;
+  background: #dcfce7;
+  border-color: #bbf7d0;
+}
+
+.consulta-header-left h1 {
+  margin: 0;
+  color: #111827;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.consulta-header-subtitle {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.consulta-header-logo {
+  height: 35px;
+  margin-right: 1rem;
+}
+
+.consulta-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.consulta-nav-btn {
+  padding: 0.5rem 0.85rem;
+  background: #f3f4f6;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.consulta-nav-btn:hover {
+  background: #e5e7eb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.consulta-user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.consulta-logout-btn {
+  padding: 0.5rem 1rem;
+  background: #000000;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s;
+}
+
+.consulta-logout-btn:hover {
+  background: #3f3f3f;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(86, 86, 86, 0.3);
+}
+
+/* Main Content */
+.consulta-main-content {
+  padding: 2rem;
+}
+
+.consulta-welcome {
+  text-align: center;
+  color: #374151;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.consulta-welcome h2 {
+  font-size: 32px;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.consulta-welcome p {
+  font-size: 18px;
+  margin-bottom: 3rem;
+  color: #6b7280;
+}
+
+.consulta-shortcuts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.shortcut-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shortcut-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.shortcut-card i {
+  font-size: 48px;
+  color: #009bdd;
+  margin-bottom: 1rem;
+}
+
+.shortcut-card h3 {
+  margin: 0 0 0.5rem 0;
+  color: #111827;
+  font-size: 18px;
+}
+
+.shortcut-card p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.shortcut-card kbd {
+  background: #f3f4f6;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: monospace;
+  font-weight: 600;
+  color: #374151;
+}
+
+/* Desktop */
+.windows-desktop-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 900;
+}
+
+/* Windows */
+.consulta-window {
+  position: fixed;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  display: none;
+  pointer-events: auto;
+}
+
+.consulta-window.active {
+  display: block;
+}
+
+.consulta-window-header {
+  background: #f9fafb;
+  border-bottom: 2px solid #e5e7eb;
+  color: #111827;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+  cursor: move;
+}
+
+.consulta-window-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 16px;
+  color: #111827;
+}
+
+.consulta-window-title i {
+  color: #009bdd;
+}
+
+.consulta-window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.consulta-window-btn {
+  width: 28px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #6b7280;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.consulta-window-btn:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.consulta-window-btn.closeb:hover {
+  background: #ef4444;
+  color: white;
+}
+
+.consulta-window-content {
+  padding: 24px;
+  overflow-y: auto;
+  overflow-x: visible;
+  background: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* Taskbar */
+.consulta-taskbar {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 8px 16px;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  gap: 8px;
+  z-index: 10000;
+  backdrop-filter: blur(10px);
+}
+
+.consulta-taskbar-item {
+  padding: 8px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.consulta-taskbar-item:hover {
+  background: #f3f4f6;
+}
+
+.consulta-taskbar-item.active {
+  background: #009bdd;
+  color: #111111;
+  font-weight: 700;
+}
+
+/* Forms */
+.consulta-form {
+  margin-bottom: 20px;
+}
+
+.consulta-form-group {
+  margin-bottom: 16px;
+}
+
+.consulta-form-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.consulta-form-group input,
+.consulta-form-group select {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.consulta-form-group input {
+  autocomplete: off;
+}
+
+.consulta-form-group input:-webkit-autofill,
+.consulta-form-group input:-webkit-autofill:hover,
+.consulta-form-group input:-webkit-autofill:focus,
+.consulta-form-group input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  box-shadow: 0 0 0 30px white inset !important;
+}
+
+.consulta-form-group input:focus,
+.consulta-form-group select:focus {
+  outline: none;
+  border-color: #009bdd;
+  box-shadow: 0 0 0 3px rgba(255, 212, 0, 0.1);
+}
+
+.consulta-btn-submit {
+  padding: 12px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+
+.consulta-btn-submit:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.consulta-btn-submit:disabled {
+  background: #d1d5db;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Loading & Error */
+.consulta-loading {
+  text-align: center;
+  padding: 40px;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.consulta-error {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 16px;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+  margin: 16px 0;
+}
+
+/* Tables */
+.estoque-tabela table,
+.historico-tabela table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+.estoque-tabela th,
+.historico-tabela th,
+.estoque-tabela td,
+.historico-tabela td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.estoque-tabela th,
+.historico-tabela th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #374151;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0px;
+}
+
+.estoque-badge {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.estoque-badge.positivo {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.estoque-badge.zerado {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Vendas Filtros */
+.vendas-filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.vendas-filtro-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.vendas-filtro-group label {
+  margin-bottom: 6px;
+  color: #374151;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.vendas-filtro-group input {
+  padding: 12px;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* Placeholder */
+.consulta-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  color: #9ca3af;
+}
+
+.consulta-placeholder p {
+  margin-top: 16px;
+  font-size: 16px;
+}
+
+/* ========== TABELAS ESTILO EXCEL ========== */
+.excel-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: white;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.excel-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-size: 12px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.excel-table thead {
+  background: linear-gradient(to bottom, #f9fafb 0%, #f3f4f6 100%);
+  border-bottom: 2px solid #d1d5db;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.excel-table th {
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 600;
+  color: #374151;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: 0px;
+  border-right: 1px solid #e5e7eb;
+  white-space: nowrap;
+}
+
+.excel-table th:last-child {
+  border-right: none;
+}
+
+.excel-table th.text-right {
+  text-align: right;
+}
+
+.excel-table th.text-center {
+  text-align: center;
+}
+
+.excel-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.15s;
+}
+
+.excel-table tbody tr:hover {
+  background: #f9fafb;
+}
+
+.excel-table tbody tr.clickable {
+  cursor: pointer;
+}
+
+.excel-table tbody tr.clickable:hover {
+  background: #eff6ff;
+}
+
+.excel-table tbody tr.selected {
+  background: #dbeafe !important;
+}
+
+.excel-table td {
+  padding: 6px 6px;
+  color: #374151;
+  border-right: 1px solid #f3f4f6;
+  font-size: 11px;
+}
+
+.excel-table td:last-child {
+  border-right: none;
+}
+
+.excel-table td.text-right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.excel-table td.text-center {
+  text-align: center;
+}
+
+.excel-table td.number {
+  font-family: 'Courier New', monospace;
+  font-weight: 500;
+}
+
+.excel-table td.currency {
+  color: #059669;
+  font-weight: 600;
+}
+
+.excel-table td.negative {
+  color: #dc2626;
+}
+
+.excel-table td.positive {
+  color: #10b981;
+}
+
+.produto-tipo-indicator {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  line-height: 10px;
+  text-align: center;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 9px;
+  margin-right: 4px;
+}
+
+.produto-tipo-indicator.venda {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.produto-tipo-indicator.devolucao {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+/* Histórico Tabela */
+.historico-tabela {
+  margin-top: 16px;
+}
+
+.historico-tabela .excel-table {
+  min-width: 1100px;
+}
+
+/* Linhas expandidas */
+.excel-table tbody tr.expanded-row {
+  background: #f9fafb;
+}
+
+.excel-table tbody tr.expanded-row:hover {
+  background: #f9fafb;
+}
+
+.excel-table tbody tr.expanded-row td {
+  padding: 0;
+  border: none;
+}
+
+.expanded-content {
+  padding: 16px;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  margin: 8px;
+}
+
+/* Tabs de Vendas */
+.vendas-tabs {
+  display: flex;
+  gap: 4px;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.vendas-tab {
+  padding: 10px 16px;
+  background: #f3f4f6;
+  border: none;
+  border-radius: 6px 6px 0 0;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+  transition: all 0.2s;
+  white-space: nowrap;
+  position: relative;
+  border-bottom: 3px solid transparent;
+}
+
+.vendas-tab:hover {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.vendas-tab.active {
+  background: white;
+  color: #10b981;
+  border-bottom: 3px solid #10b981;
+}
+
+/* ========== TABELA EM TRÂNSITO - RESPONSIVO ========== */
+.transito-table-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.transito-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.transito-row:hover {
+  background: #f9fafb !important;
+}
+
+/* ========== RESPONSIVIDADE MOBILE ========== */
+
+@media (max-width: 768px) {
+  /* ========== HEADER FIXO NO MOBILE ========== */
+  .consulta-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 12px 16px;
+    z-index: 1100;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .consulta-header h1 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+  .consulta-header-nav {
+    display: none; /* no mobile pra não estourar */
+  }
+
+  /* Main content com espaço para o header fixo */
+  .consulta-main-content {
+    padding: 16px;
+    padding-top: 70px; /* Espaço para o header fixo */
+  }
+
+  .consulta-user-info {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .consulta-logout-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  /* ========== JANELAS ESTILO APP ========== */
+  .consulta-window {
+    position: fixed !important;
+    top: 60px !important; /* Logo abaixo do header fixo */
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: calc(100vh - 60px) !important;
+    max-width: 100% !important;
+    border-radius: 0 !important;
+    z-index: 1000;
+  }
+
+  /* Header da janela estilo APP */
+  .consulta-window-header {
+    padding: 12px 16px;
+    min-height: 50px;
+    cursor: default; /* Remove cursor move no mobile */
+    background: #373737;
+    border-bottom: none;
+  }
+
+  .consulta-window-title {
+    font-size: 14px;
+    color: white;
+    flex: 1;
+  }
+
+  .consulta-window-title i {
+    color: white;
+  }
+
+  /* Botão voltar estilo APP */
+  .consulta-window-btn.back-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 8px;
+    margin-right: 8px;
+  }
+
+  .consulta-window-btn.back-btn:hover {
+    background: rgba(90, 90, 90, 0.3);
+  }
+
+  /* Outros botões da janela */
+  .consulta-window-btn {
+    width: 32px;
+    height: 32px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+  }
+
+  .consulta-window-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+  }
+
+  .consulta-window-btn.closeb:hover {
+    background: #ef4444;
+    color: white;
+  }
+
+  .consulta-window-content {
+    padding: 16px;
+    max-height: calc(100vh - 110px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* ========== BOTÃO SUBMIT CORRIGIDO ========== */
+  .consulta-btn-submit {
+    padding: 11px 20px;
+    font-size: 13px !important;
+    justify-content: center;
+  }
+
+  /* Shortcuts Grid */
+  .consulta-shortcuts-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .shortcut-card {
+    padding: 16px;
+  }
+
+  .shortcut-card i {
+    font-size: 32px;
+  }
+
+  .shortcut-card h3 {
+    font-size: 15px;
+  }
+
+  .shortcut-card p {
+    font-size: 12px;
+  }
+
+  /* ========== TASKBAR MOBILE ========== */
+  .consulta-taskbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: none;
+    border-radius: 0;
+    padding: 8px;
+    gap: 4px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    z-index: 1050;
+  }
+
+  .consulta-taskbar-item {
+    padding: 8px 12px;
+    font-size: 11px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Forms */
+  .consulta-form {
+    margin-bottom: 12px;
+  }
+
+  .consulta-form-group {
+    margin-bottom: 12px;
+  }
+
+  .consulta-form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .consulta-form-group input,
+  .consulta-form-group select {
+    padding: 10px 12px;
+    font-size: 16px; /* Prevenir zoom no iOS Safari */
+  }
+
+  /* Grid de forms vira coluna no mobile */
+  div[style*="display: grid"][style*="gridTemplateColumns"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+
+  /* Tables */
+  .excel-table-container {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-height: 400px;
+  }
+
+  .excel-table {
+    font-size: 11px;
+  }
+
+  .excel-table th,
+  .excel-table td {
+    padding: 8px 6px;
+    font-size: 10px;
+  }
+
+  /* Vendas Tabs */
+  .vendas-tabs {
+    gap: 2px;
+    margin-bottom: 12px;
+  }
+
+  .vendas-tab {
+    padding: 8px 12px;
+    font-size: 11px;
+  }
+
+  /* Transito Table Mobile */
+  .transito-table {
+    min-width: 100%;
+    font-size: 10px;
+  }
+
+  .transito-table th {
+    padding: 4px 2px !important;
+    font-size: 8px !important;
+  }
+
+  .transito-table td {
+    padding: 4px 2px !important;
+    font-size: 9px !important;
+  }
+
+  /* Esconder coluna "Total" no mobile */
+  .transito-table thead tr th:nth-child(7),
+  .transito-table tbody tr:not(.transito-expanded-row) td:nth-child(7) {
+    display: none !important;
+  }
+
+  /* Número do pedido - FORÇAR 10px no mobile */
+  .transito-table td span[style*="fontWeight: '700'"],
+  .transito-table td span[style*='fontWeight: "700"'],
+  .transito-table td div span {
+    font-size: 10px !important;
+  }
+
+  /* Ícones menores */
+  .transito-table td i {
+    font-size: 9px !important;
+    margin-right: 3px !important;
+  }
+
+  /* Chevron menor */
+  .transito-table td i.fa-chevron-up,
+  .transito-table td i.fa-chevron-down {
+    font-size: 8px !important;
+  }
+
+  /* Prod. e Total menores */
+  .transito-table td[style*="fontWeight: '600'"],
+  .transito-table td[style*='fontWeight: "600"'] {
+    font-size: 9px !important;
+  }
+
+  /* Transito - Ajustes nos cards expandidos */
+  .transito-row td > div {
+    font-size: 10px !important;
+  }
+
+  .transito-row td button {
+    padding: 4px 8px !important;
+    font-size: 9px !important;
+    gap: 4px !important;
+  }
+
+  /* Transito - Chave NFe responsiva */
+  .transito-row code {
+    font-size: 8px !important;
+    padding: 4px 6px !important;
+    word-break: break-all !important;
+  }
+
+  /* Transito - Linha expandida mobile - COMPACTA */
+  .transito-expanded-row td {
+    padding: 8px !important;
+  }
+
+  /* Tabela de produtos - MANTER TABELA, SÓ COMPACTAR */
+  .transito-produtos-table {
+    font-size: 9px !important;
+    min-width: auto !important;
+  }
+
+  .transito-produtos-table th {
+    padding: 4px 3px !important;
+    font-size: 8px !important;
+  }
+
+  .transito-produtos-table td {
+    padding: 4px 3px !important;
+    font-size: 9px !important;
+  }
+
+  /* Área de chave NFe e botões */
+  .transito-chave-area {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    padding: 8px !important;
+  }
+
+  .transito-chave-info {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+  }
+
+  .transito-chave-code {
+    width: 100% !important;
+    text-align: center !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+    word-break: break-all !important;
+    font-size: 8px !important;
+    padding: 3px 6px !important;
+  }
+
+  .transito-chave-buttons {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+
+  .transito-chave-buttons button {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-right: 0 !important;
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+  }
+
+  /* Remove hover effects on mobile */
+  .transito-chave-buttons button:hover {
+    transform: none !important;
+  }
+
+  /* Welcome section */
+  .consulta-welcome h2 {
+    font-size: 22px;
+    margin-bottom: 0.5rem;
+  }
+
+  .consulta-welcome p {
+    font-size: 14px;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Mobile Extra Small */
+@media (max-width: 480px) {
+  .consulta-header {
+    padding: 10px 12px;
+  }
+
+  .consulta-header h1 {
+    font-size: 14px;
+  }
+
+  .consulta-main-content {
+    padding: 12px;
+    padding-top: 80px;
+  }
+
+  .consulta-window-header {
+    padding: 10px 12px;
+    min-height: 48px;
+  }
+
+  .consulta-window-title {
+    font-size: 13px;
+  }
+
+  .consulta-window-btn {
+    width: 30px;
+    height: 30px;
+  }
+
+  .consulta-window-content {
+    padding: 12px;
+    max-height: calc(100vh - 108px);
+  }
+
+  .consulta-btn-submit {
+    padding: 10px 18px;
+    font-size: 12px !important;
+  }
+
+  .consulta-form-group label {
+    font-size: 11px;
+  }
+
+  .consulta-form-group input,
+  .consulta-form-group select {
+    padding: 9px 10px;
+    font-size: 16px; /* Prevenir zoom no iOS Safari */
+  }
+
+  .excel-table th,
+  .excel-table td {
+    padding: 6px 4px;
+    font-size: 9px;
+  }
+
+  .consulta-taskbar {
+    padding: 6px;
+  }
+
+  .consulta-taskbar-item {
+    padding: 6px 10px;
+    font-size: 10px;
+  }
+
+  .consulta-welcome h2 {
+    font-size: 20px;
+  }
+
+  .consulta-welcome p {
+    font-size: 13px;
+  }
+
+  .shortcut-card {
+    padding: 14px;
+  }
+
+  .shortcut-card i {
+    font-size: 28px;
+  }
+
+  .shortcut-card h3 {
+    font-size: 14px;
+  }
+
+  .shortcut-card p {
+    font-size: 11px;
+  }
+
+  /* Transito mobile extra small */
+  .transito-table th {
+    padding: 5px 2px !important;
+    font-size: 7px !important;
+  }
+
+  .transito-table td {
+    padding: 5px 2px !important;
+    font-size: 8px !important;
+  }
+
+  /* Número do pedido ainda menor em telas pequenas */
+  .transito-table td span[style*="fontWeight: '700'"] {
+    font-size: 11px !important;
+  }
+
+  /* Ícones ainda menores */
+  .transito-table td i {
+    font-size: 9px !important;
+  }
+
+  .transito-row td button {
+    padding: 3px 6px !important;
+    font-size: 8px !important;
+  }
+
+  .transito-row code {
+    font-size: 7px !important;
+    padding: 3px 4px !important;
+  }
+
+  /* Cards de produtos mais compactos em telas muito pequenas */
+  .transito-produto-row {
+    padding: 8px !important;
+    gap: 6px !important;
+  }
+
+  .transito-produto-row td::before {
+    font-size: 8px !important;
+    margin-bottom: 2px !important;
+  }
+
+  .transito-produto-row td {
+    font-size: 10px !important;
+  }
+
+  .transito-chave-area {
+    padding: 8px !important;
+    gap: 8px !important;
+  }
+
+  .transito-chave-code {
+    font-size: 8px !important;
+  }
+
+  .transito-chave-buttons button {
+    padding: 8px 10px !important;
+    font-size: 10px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  .consulta-header h1 {
+    font-size: 13px;
+  }
+
+  .consulta-window-title {
+    font-size: 12px;
+  }
+
+  .consulta-btn-submit {
+    padding: 9px 16px;
+    font-size: 11px !important;
+  }
+
+  .consulta-form-group input,
+  .consulta-form-group select {
+    padding: 8px 10px;
+    font-size: 16px; /* Prevenir zoom no iOS Safari */
+  }
+}
+
+/* Prevenir zoom em todos os inputs no Safari iOS */
+@supports (-webkit-touch-callout: none) {
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+}
+
+/* Melhorias específicas do Safari/iOS */
+@media (max-width: 768px) {
+  @supports (-webkit-touch-callout: none) {
+    /* Prevenir scroll "bounce" descontrolado */
+    .consulta-window {
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* Melhor handling do teclado virtual */
+    .consulta-window-content {
+      -webkit-overflow-scrolling: touch;
+    }
+  }
+}

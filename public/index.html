@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Consultas seeLL"
+    />
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Prevenda - Flavio</title>
+
+    <!-- Script para limpar service workers ANTES de carregar o app -->
+    <script>
+      (function() {
+        if ('serviceWorker' in navigator) {
+          navigator.serviceWorker.getRegistrations().then(function(registrations) {
+            for (var registration of registrations) {
+              registration.unregister();
+              console.log('ServiceWorker desregistrado:', registration.scope);
+            }
+          });
+        }
+        if ('caches' in window) {
+          caches.keys().then(function(names) {
+            for (var name of names) {
+              caches.delete(name);
+              console.log('Cache deletado:', name);
+            }
+          });
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>Você precisa habilitar JavaScript para executar esta aplicação.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

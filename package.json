@@ -1,0 +1,89 @@
+{
+  "name": "prevenda2-flavio",
+  "version": "1.0.0",
+  "description": "Simulador de Venda (Pré-venda) - Desktop",
+  "private": true,
+  "main": "electron/main.js",
+  "homepage": ".",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/renezit0/prevenda2-flavio.git"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "http-proxy-middleware": "^2.0.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.12.0",
+    "react-scripts": "^5.0.1",
+    "recharts": "^3.6.0"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^40.2.1",
+    "electron-builder": "^26.7.0",
+    "wait-on": "^7.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "electron:dev": "concurrently -k \"cross-env BROWSER=none react-scripts start\" \"wait-on http://localhost:3000 && cross-env ELECTRON_START_URL=http://localhost:3000 electron .\"",
+    "dist": "npm run build && electron-builder",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "build": {
+    "appId": "com.seellbr.prevenda2",
+    "productName": "PreVenda Flavio",
+    "icon": "electron/icons/icon.png",
+    "extraMetadata": {
+      "main": "electron/main.js"
+    },
+    "files": [
+      "build/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "asar": true,
+    "mac": {
+      "icon": "electron/icons/icon.png",
+      "target": [
+        "dmg"
+      ]
+    },
+    "win": {
+      "icon": "electron/icons/icon.png",
+      "target": [
+        "nsis"
+      ]
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "renezit0",
+        "repo": "prevenda2-flavio"
+      }
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
