@@ -1443,7 +1443,7 @@ const WindowSimulador = ({ onClose, zIndex, onFocus, userData, embedded = false 
       )}
       <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '8px' }}>
         <img
-          src="/logo-call.webp"
+          src={`${process.env.PUBLIC_URL || ''}/logo-call.webp`}
           alt="Call"
           style={{ height: '32px', opacity: 0.85 }}
         />
